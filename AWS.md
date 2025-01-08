@@ -1,4 +1,17 @@
-# Amazon Web Services (AWS) - Complete Service Catalog
+# Complete AWS Services Catalog (2025)
+
+## Table of Contents
+
+1. Compute Services
+2. Storage Services
+3. Database Services
+4. AI/Machine Learning Services
+5. Analytics Services
+6. Security & Identity Services
+7. Networking & Content Delivery Services
+8. Management & Monitoring Services
+9. Developer Tools
+10. Application Integration Services
 
 ## Compute Services
 
@@ -12,109 +25,182 @@
 
 - **AWS Fargate**: Serverless compute engine for containers. Eliminates the need to provision and manage servers while running ECS or EKS workloads. Automatically scales compute based on application demands and charges only for resources consumed.
 
+- **AWS App Runner**: Fully managed service that makes it easy to deploy web applications and APIs at scale. Automatically builds and deploys web applications, with infrastructure management handled by AWS.
+
 - **AWS Batch**: Fully managed batch processing service. Plans, schedules, and executes batch computing workloads across the full range of AWS compute services. Ideal for parallel processing of large-scale computing jobs.
 
 - **Amazon Lightsail**: Simplified virtual private server (VPS) service. Provides easy-to-use compute, storage, and networking for simple web applications. Includes everything needed to get started quickly with predictable monthly pricing.
 
+- **AWS Outposts**: Fully managed service that extends AWS infrastructure and services to virtually any on-premises facility. Enables consistent hybrid cloud architecture with AWS APIs and tools.
+
+- **AWS Local Zones**: Infrastructure deployments that place compute, storage, database, and other select AWS services closer to large population centers. Provides single-digit millisecond latency for latency-sensitive applications.
+
 ## Storage Services
 
-- **Amazon Simple Storage Service (S3)**: Scalable object storage with industry-leading durability. Offers various storage classes for cost optimization and includes features like versioning, lifecycle policies, and encryption. Commonly used for backup, static websites, and data lakes.
+- **Amazon Simple Storage Service (S3)**: Industry-leading scalable object storage. Offers various storage classes for cost optimization and includes features like versioning, lifecycle policies, and encryption. Commonly used for backup, static website hosting, and data lakes.
+
+- **Amazon S3 Glacier**: Long-term data archival service with multiple retrieval options:
+
+  - Glacier Instant Retrieval: Millisecond retrieval for archive data
+  - Glacier Flexible Retrieval: Minutes to hours retrieval time
+  - Glacier Deep Archive: Lowest cost for rarely accessed data
+
+- **Amazon S3 Express One Zone**: High-performance object storage for latency-sensitive applications. Delivers consistent single-digit millisecond latency and high throughput. Ideal for machine learning training, media processing, and real-time analytics.
 
 - **Amazon Elastic Block Store (EBS)**: High-performance block storage for EC2 instances. Provides multiple volume types optimized for different workloads and automatically replicates within Availability Zones. Supports point-in-time snapshots for backup and migration.
 
-- **Amazon S3 Express One Zone**: High-performance object storage designed for latency-sensitive applications. Delivers consistent single-digit millisecond latency and high throughput. Ideal for machine learning training, media processing, and real-time analytics workloads.
-
 - **Amazon Elastic File System (EFS)**: Fully managed elastic NFS file system. Automatically scales storage capacity and performance based on demand. Supports concurrent access from thousands of compute instances with consistent low latency.
 
-- **Amazon FSx**: Family of fully managed file systems. Includes FSx for Windows File Server, FSx for Lustre, FSx for OpenZFS, and FSx for NetApp ONTAP. Each optimized for specific workload requirements and compatibility needs.
+- **Amazon FSx**: Family of fully managed file systems:
 
-- **AWS Storage Gateway**: Hybrid cloud storage integration service. Provides seamless integration between on-premises applications and AWS cloud storage. Supports file, volume, and tape gateway configurations for different use cases.
+  - FSx for Windows File Server: Native Windows file system
+  - FSx for Lustre: High-performance computing
+  - FSx for OpenZFS: Cost-effective ZFS file system
+  - FSx for NetApp ONTAP: Enterprise data management
+
+- **AWS Storage Gateway**: Hybrid cloud storage integration service. Provides seamless integration between on-premises applications and AWS cloud storage. Supports file, volume, and tape gateway configurations.
+
+- **AWS Snow Family**: Physical edge computing and data transfer devices:
+  - Snowcone: Small, rugged edge computing
+  - Snowball Edge: Petabyte-scale data transport
+  - Snowmobile: Exabyte-scale data transfer
 
 ## Database Services
 
-- **Amazon Relational Database Service (RDS)**: Managed relational database service supporting multiple engines (MySQL, PostgreSQL, Oracle, SQL Server, MariaDB). Automates time-consuming administration tasks like hardware provisioning, database setup, patching, and backups. Provides high availability with Multi-AZ deployments.
+- **Amazon Relational Database Service (RDS)**: Managed relational database service supporting multiple engines (MySQL, PostgreSQL, Oracle, SQL Server, MariaDB). Automates administration tasks like hardware provisioning, database setup, patching, and backups.
 
-- **Amazon DynamoDB**: Fully managed NoSQL database service delivering consistent single-digit millisecond performance. Automatically scales throughput and storage while maintaining performance at any scale. Features include global tables, point-in-time recovery, and encryption at rest.
+- **Amazon Aurora**: MySQL and PostgreSQL-compatible database engine delivering up to 5x performance. Automatically grows storage from 10GB to 128TB and replicates data across multiple Availability Zones. Includes serverless option for variable workloads.
 
-- **Amazon Aurora**: MySQL and PostgreSQL-compatible relational database engine. Delivers up to 5x performance of MySQL and 3x of PostgreSQL with better availability. Automatically grows storage from 10GB to 128TB and replicates data across multiple Availability Zones.
+- **Amazon DynamoDB**: Fully managed NoSQL database service delivering consistent single-digit millisecond performance. Automatically scales throughput and storage while maintaining performance at any scale. Features global tables, backups, and encryption.
 
-- **Amazon ElastiCache**: Fully managed in-memory caching service. Supports Redis and Memcached engines for real-time applications requiring sub-millisecond latency. Simplifies deployment and management of distributed caching environments.
+- **Amazon ElastiCache**: Fully managed in-memory caching service supporting Redis and Memcached. Enables sub-millisecond latency for real-time applications. Simplifies deployment and management of distributed caching environments.
 
-- **Amazon Redshift**: Fully managed data warehouse service. Enables analyzing large datasets using standard SQL and existing business intelligence tools. Provides built-in compression and columnar storage for query optimization.
+- **Amazon Redshift**: Fully managed data warehouse service for analyzing large datasets. Enables analyzing exabyte-scale data using standard SQL and existing business intelligence tools. Provides built-in compression and columnar storage.
 
-- **Amazon DocumentDB (with MongoDB compatibility)**: Fully managed document database service. Compatible with MongoDB workloads while providing the scalability and durability of AWS. Automatically scales compute and storage independently.
+- **Amazon DocumentDB**: MongoDB-compatible document database service. Scales compute and storage independently while maintaining MongoDB compatibility. Provides automated backups and point-in-time recovery.
 
-- **Amazon Neptune**: Fully managed graph database service. Optimized for storing billions of relationships and querying the graph with milliseconds latency. Supports popular graph models including Property Graph and RDF.
+- **Amazon Neptune**: Graph database service optimized for storing billions of relationships. Supports popular graph models including Property Graph and RDF. Enables millisecond latency graph queries.
 
-- **Amazon Timestream**: Fully managed time series database service. Purpose-built for collecting, storing, and processing time-series data. Automatically scales storage and compute to handle billions of daily events.
+- **Amazon Timestream**: Purpose-built time series database for collecting and processing time-series data. Automatically scales compute and storage to handle billions of daily events.
 
-## Artificial Intelligence/Machine Learning Services
+- **Amazon Keyspaces**: Managed Apache Cassandra-compatible service. Provides scalable, highly-available, and managed Cassandra-workload capabilities with encryption and backup.
 
-- **Amazon Bedrock**: Managed service for foundation models and generative AI. Provides unified API access to top-performing models from leading providers. Enables customization and fine-tuning while maintaining security and compliance standards.
+## AI/Machine Learning Services
 
-- **Amazon SageMaker**: Comprehensive machine learning platform. Includes tools for data labeling, feature engineering, model training, optimization, and deployment. Supports automated model tuning and production deployment with continuous monitoring.
+- **Amazon Bedrock**: Managed service for foundation models and generative AI. Provides unified API access to leading AI models with customization capabilities. Maintains security and compliance standards.
 
-- **Amazon CodeWhisperer**: AI-powered code generation service. Provides real-time code suggestions based on natural language comments and existing code. Supports multiple programming languages and integrates with popular IDEs.
+- **Amazon SageMaker**: Comprehensive machine learning platform. Includes tools for data labeling, feature engineering, model training, optimization, and deployment. Supports automated model tuning and production deployment.
 
-- **Amazon Rekognition**: Computer vision and image analysis service. Identifies objects, people, text, scenes, and activities in images and videos. Provides highly accurate facial analysis, face comparison, and face search capabilities.
+- **Amazon CodeWhisperer**: AI-powered code generation service. Provides real-time code suggestions based on natural language comments and existing code. Supports multiple programming languages and IDEs.
 
-- **Amazon Comprehend**: Natural language processing (NLP) service. Extracts insights and relationships from unstructured text using machine learning. Identifies entities, key phrases, sentiment, and topic modeling.
+- **Amazon Rekognition**: Computer vision and image analysis service. Identifies objects, people, text, scenes, and activities in images and videos. Provides facial analysis and recognition capabilities.
 
-- **Amazon Q**: Generative AI-powered business intelligence service. Enables natural language queries across organizational data sources. Provides AI-generated insights while maintaining enterprise security and compliance standards.
+- **Amazon Comprehend**: Natural language processing service. Extracts insights from unstructured text using machine learning. Identifies entities, key phrases, sentiment, and topic modeling.
+
+- **Amazon Q**: Generative AI-powered business intelligence service. Enables natural language queries across organizational data with AI-generated insights while maintaining security standards.
+
+- **Amazon Polly**: Text-to-speech service using deep learning. Converts text to lifelike speech in multiple languages and voices. Supports custom lexicons and SSML.
+
+- **Amazon Transcribe**: Automatic speech recognition service. Converts audio to text with high accuracy. Supports multiple languages and custom vocabularies.
+
+- **Amazon Textract**: OCR and document analysis service. Extracts text, forms, and tables from documents. Maintains formatting and relationships between data.
+
+- **Amazon Forecast**: Time series forecasting service combining statistical and machine learning approaches. Provides accurate predictions for business metrics and planning.
+
+- **Amazon Personalize**: Real-time personalization and recommendation service. Creates custom ML models for personalized user experiences. Integrates with existing applications.
 
 ## Analytics Services
 
-- **Amazon EMR (Elastic MapReduce)**: Managed big data platform. Processes vast amounts of data using open-source tools such as Apache Spark, Hive, HBase, and Presto. Automatically scales resources and handles cluster management.
+- **Amazon EMR (Elastic MapReduce)**: Managed big data platform. Processes vast amounts of data using open-source tools such as Apache Spark, Hive, and Presto. Automatically scales resources and handles cluster management.
 
-- **Amazon Kinesis**: Platform for streaming data on AWS. Includes services for real-time data collection, processing, and analysis. Supports video streams, data streams, data firehose, and data analytics.
+- **Amazon Kinesis**: Platform for streaming data on AWS:
 
-- **Amazon Athena**: Interactive query service for S3 data. Enables analyzing data directly in S3 using standard SQL without moving the data. Serverless operation means you pay only for queries you run.
+  - Kinesis Data Streams: Real-time data streaming
+  - Kinesis Data Firehose: Data delivery to AWS services
+  - Kinesis Data Analytics: Real-time analytics
+  - Kinesis Video Streams: Video ingestion and processing
 
-- **Amazon QuickSight**: Cloud-native business intelligence service. Delivers interactive dashboards and ML-powered insights. Provides embedded analytics capabilities and pay-per-session pricing model.
+- **Amazon Athena**: Interactive query service for S3 data. Enables analyzing data directly in S3 using standard SQL without moving the data. Serverless operation with pay-per-query pricing.
 
-- **Amazon OpenSearch Service**: Distributed search and analytics suite. Enables real-time application monitoring, log analytics, and full-text search. Built on open-source OpenSearch and OpenSearch Dashboards.
+- **Amazon QuickSight**: Cloud-native business intelligence service. Delivers interactive dashboards and ML-powered insights. Provides embedded analytics capabilities.
+
+- **Amazon OpenSearch Service**: Distributed search and analytics suite. Enables real-time application monitoring, log analytics, and full-text search. Built on open-source OpenSearch.
+
+- **AWS Glue**: Serverless data integration service. Provides ETL capabilities and data catalog. Supports both batch and streaming data processing.
+
+- **Amazon DataZone**: Data management and governance service. Enables data discovery, sharing, and access control. Maintains data governance standards.
+
+- **AWS Clean Rooms**: Secure data collaboration service. Enables privacy-safe data analysis between parties. Supports customizable collaboration rules.
+
+- **Amazon MSK (Managed Streaming for Apache Kafka)**: Fully managed Apache Kafka service. Provides secure and scalable streaming infrastructure. Supports native Kafka tools.
 
 ## Security & Identity Services
 
-- **AWS Identity and Access Management (IAM)**: Global security service for AWS resources. Manages access to AWS services and resources securely. Controls authentication and authorization for users and applications.
+- **AWS Identity and Access Management (IAM)**: Global security service managing access to AWS resources. Controls authentication and authorization for users and applications. Provides fine-grained permissions management.
 
-- **Amazon GuardDuty**: Intelligent threat detection service. Continuously monitors AWS accounts, workloads, and data for malicious activity. Uses machine learning to identify threats and unexpected behavior.
+- **Amazon GuardDuty**: Intelligent threat detection service. Continuously monitors AWS accounts and workloads for malicious activity. Uses machine learning to identify threats.
 
-- **AWS Shield**: Managed Distributed Denial of Service (DDoS) protection service. Provides always-on detection and automatic inline mitigations. Available in Standard (free) and Advanced tiers.
+- **AWS Shield**: Managed DDoS protection service. Provides always-on detection and automatic inline mitigations. Available in Standard and Advanced tiers.
 
-- **AWS Web Application Firewall (WAF)**: Web application firewall service. Protects web applications from common exploits and bots. Includes rules for SQL injection, cross-site scripting, and other vulnerabilities.
+- **AWS Web Application Firewall (WAF)**: Web application firewall service. Protects web applications from common exploits and bots. Includes customizable security rules.
 
-- **Amazon Macie**: Data security and privacy service. Uses machine learning to discover and protect sensitive data. Provides automated sensitive data discovery and continuous monitoring.
+- **Amazon Macie**: Data security and privacy service. Uses machine learning to discover and protect sensitive data. Provides automated sensitive data discovery.
+
+- **AWS Key Management Service (KMS)**: Managed cryptographic key service. Creates and controls encryption keys with centralized management. Integrates with AWS services.
+
+- **AWS Certificate Manager**: SSL/TLS certificate management service. Provisions, manages, and deploys certificates. Integrates with AWS services.
+
+- **AWS Secrets Manager**: Secrets management service. Rotates, manages, and retrieves database credentials, API keys, and other secrets. Enforces encryption.
+
+- **Amazon Detective**: Security investigation service. Analyzes security findings and identifies root causes. Uses machine learning for behavior analytics.
+
+- **AWS IAM Identity Center**: Centralized access management service. Manages SSO access to multiple AWS accounts and applications. Integrates with corporate directories.
 
 ## Networking & Content Delivery Services
 
-- **Amazon Virtual Private Cloud (VPC)**: Isolated cloud networks. Provides complete control over the virtual networking environment. Includes selection of IP ranges, subnets, route tables, and gateways.
+- **Amazon Virtual Private Cloud (VPC)**: Isolated cloud networks. Provides complete control over the virtual networking environment. Includes selection of IP ranges, subnets, routing tables, and gateways.
 
-- **Amazon CloudFront**: Global content delivery network (CDN). Securely delivers data, videos, applications, and APIs with low latency and high transfer speeds. Integrates with AWS Shield for DDoS protection.
+- **Amazon CloudFront**: Global content delivery network. Securely delivers data, videos, applications, and APIs with low latency. Integrates with AWS Shield for DDoS protection.
 
-- **Amazon Route 53**: Scalable domain name system (DNS) web service. Provides highly available and scalable DNS, domain registration, and health checking. Supports various routing policies including latency-based routing.
+- **Amazon Route 53**: Scalable domain name system service. Provides highly available and scalable DNS, domain registration, and health checking. Supports various routing policies.
 
-- **Amazon API Gateway**: Fully managed service for creating and maintaining APIs. Handles all tasks involved in accepting and processing API calls. Includes traffic management, monitoring, and API version control.
+- **Amazon API Gateway**: Managed service for creating and maintaining APIs. Handles all tasks involved in accepting and processing API calls. Includes traffic management and monitoring.
+
+- **AWS Direct Connect**: Dedicated network connection service. Provides consistent network experience with reduced costs. Supports hybrid cloud architecture.
+
+- **AWS Transit Gateway**: Network transit hub service. Connects VPCs and on-premises networks. Simplifies network architecture.
 
 ## Management & Monitoring Services
 
 - **Amazon CloudWatch**: Monitoring and observability service. Provides data and insights for AWS resources, applications, and services. Includes metrics collection, log analytics, and automated actions.
 
-- **AWS Systems Manager**: Operations and application management service. Provides a unified interface for managing AWS resources. Includes automation, parameter store, and session management.
+- **AWS Systems Manager**: Operations and application management service. Provides unified interface for managing AWS resources. Includes automation, parameter store, and session management.
 
-- **AWS CloudTrail**: Governance, compliance, and audit service. Records API activity and events in AWS accounts. Enables security analysis, resource change tracking, and compliance auditing.
+- **AWS CloudTrail**: Governance, compliance, and audit service. Records API activity and events in AWS accounts. Enables security analysis and compliance auditing.
 
 - **AWS CloudFormation**: Infrastructure as code service. Allows modeling and provisioning AWS resources using templates. Supports automatic rollback and drift detection.
 
+- **AWS Config**: Resource inventory and configuration service. Tracks AWS resource inventory and changes. Enables security analysis and resource administration.
+
+- **AWS Control Tower**: Account governance service. Sets up and governs multi-account AWS environments. Implements compliance controls and best practices.
+
 ## Developer Tools
 
-- **AWS CodeCatalyst**: Unified software development service. Provides integrated environment for planning, coding, building, and deploying applications. Includes project management and collaboration features.
+- **AWS CodeCatalyst**: Unified software development service. Provides integrated environment for planning, coding, building, and deploying applications. Includes project management features.
 
-- **AWS Cloud9**: Cloud-based integrated development environment (IDE). Enables writing, running, and debugging code from a web browser. Includes pre-configured development environments.
+- **AWS Cloud9**: Cloud-based IDE. Enables writing, running, and debugging code from a web browser. Includes pre-configured development environments.
 
-- **AWS CodeCommit**: Fully managed source control service. Hosts secure Git repositories. Supports collaboration features and integrates with other AWS developer tools.
+- **AWS CodeCommit**: Managed source control service. Hosts secure Git repositories. Supports collaboration features and integrates with other AWS developer tools.
 
-- **AWS Amplify**: Full-stack application development platform. Simplifies building, deploying, and hosting web and mobile applications. Includes pre-built UI components and ready-to-use backends.
+- **AWS CodeBuild**: Continuous integration service. Compiles code, runs tests, and produces deployment packages. Supports multiple languages and build types.
+
+- **AWS CodeDeploy**: Automated deployment service. Coordinates application deployments to compute services. Supports EC2, Lambda, and on-premises servers.
+
+- **AWS CodePipeline**: Continuous delivery service. Automates build, test, and deployment phases. Integrates with source control and third-party tools.
+
+- **AWS X-Ray**: Application monitoring and debugging service. Analyzes and debugs distributed applications. Provides request tracing and performance insights.
+
+- **AWS Amplify**: Full-stack application development platform. Simplifies building, deploying, and hosting applications. Includes pre-built UI components and backend services.
 
 ## Application Integration Services
 
@@ -122,6 +208,12 @@
 
 - **Amazon Simple Notification Service (SNS)**: Managed pub/sub messaging service. Enables high-throughput message delivery to subscribing endpoints. Supports multiple protocols including HTTP/S, email, and SMS.
 
-- **Amazon Simple Queue Service (SQS)**: Fully managed message queuing service. Enables decoupling and scaling of distributed applications. Supports standard and FIFO queues with guaranteed message delivery.
+- **Amazon Simple Queue Service (SQS)**: Managed message queuing service. Enables decoupling and scaling of distributed applications. Supports standard and FIFO queues with guaranteed message delivery.
 
-- **AWS Step Functions**: Visual workflow service for distributed applications. Coordinates multiple AWS services into serverless workflows. Provides automatic scaling, error handling, and state management.
+- **AWS Step Functions**: Visual workflow service for distributed applications. Coordinates multiple AWS services into serverless workflows. Provides automatic scaling and error handling.
+
+- **AWS AppSync**: Managed GraphQL service. Simplifies application data access and updates. Supports real-time data synchronization.
+
+- **Amazon MQ**: Managed message broker service. Supports Apache ActiveMQ and RabbitMQ. Provides enterprise messaging capabilities with high availability.
+
+- **AWS AppFlow**: SaaS integration service. Automates bidirectional data flows between AWS and SaaS applications. Includes pre-built connectors for popular services.
