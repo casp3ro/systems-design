@@ -1,4 +1,4 @@
-# Complete AWS Services Catalog (2025)
+# Complete AWS Services Catalog
 
 ## Table of Contents
 
